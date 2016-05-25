@@ -240,6 +240,9 @@ var ToyPadEmu = function (_EventEmitter) {
 				var buf = new Buffer(8);
 				buf.writeUInt32BE(conf, 4);
 				res.payload = new Buffer(9);
+
+				console.log('Token.token.id: ' + token.token.id);
+				console.log('Token.id: ' + token.id);
 				if (token) {
 					if (token.token.id) buf.writeUInt32LE(token.token.id || 0, 0);else res.payload[0] = 0xF9;
 				} else res.payload[0] = 0xF2;

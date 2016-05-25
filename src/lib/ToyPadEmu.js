@@ -11,7 +11,7 @@ import TEA from './TEA.js';
 
 export default class ToyPadEmu extends EventEmitter {
 	constructor(opts){
-		opts = opts || { transport :  new rawTransport('/dev/hidg0') }
+		opts = opts || { transport : new rawTransport('/dev/hidg0') }
 		super(opts)
 		if(!opts.transport && opts.transport !== false)
 			opts.transport = new rawTransport('/dev/hidg0')
@@ -157,6 +157,9 @@ export default class ToyPadEmu extends EventEmitter {
 			var buf = new Buffer(8)
 			buf.writeUInt32BE(conf,4)
 			res.payload = new Buffer(9)
+
+			console.log('Token.token.id: ' + token.token.id);
+console.log('Token.id: ' + token.id);
 			if(token)
 				if(token.token.id)
 					buf.writeUInt32LE(token.token.id || 0,0)
