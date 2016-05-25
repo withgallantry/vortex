@@ -14,7 +14,7 @@ function processCreateTagData (req, res, next) {
     res.send (200, tag);
   })
     .catch (function (err) {
-    res.send (500, "Something went wrong");
+    res.send (500, err);
   });
   next ();
 };
