@@ -12,7 +12,7 @@ var TARDIS = createVehicle(1030,[0xEFFFFFFF,0xEFFFFFFF]) //.toString('hex').repl
 var TheDoctor = createCharacter(15) //.toString('hex').replace(/([0-9a-f]{2})/g,'$1 ')
 
 tp.place(TARDIS,2,0,TARDIS.uid)
-tp.place(TheDoctor,2,1,TheDoctor.uid)
+tp.place(TheDoctor,2,0,TheDoctor.uid)
 
 function createVehicle(id,upgrades){
 	upgrades = upgrades || [0,0]
@@ -30,6 +30,7 @@ function createCharacter(id){
 	var token = new Buffer(180)
 	token.fill(0) // Game really only cares about 0x26 being 0 and D4 returning an ID
 	token.uid = tp.randomUID()
+	token.writeUInt16LE(id,0x24*4)
 	token.id = id
 	return token;
 }
