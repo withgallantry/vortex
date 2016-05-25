@@ -15,7 +15,8 @@ module.exports = function (tp) {
   this.placeTag = function (tag) {
     return new Promise (function (resolve, reject) {
       var tagBuffer = new Buffer (tag.buffer.data ? tag.buffer.data : tag.buffer);
-      var tagData = tp.place (tagBuffer, tag.pad, tag.padPosition, tag.uid)
+      tagBuffer.id = tag.id;
+      var tagData = tp.place (tagBuffer, tag.pad, tag.padPosition, tag.uid);
       resolve(tagData);
     });
   };
