@@ -11,7 +11,7 @@ module.exports = {
   },
   verifyPlaceTagData: function (tagData) {
     return new Promise (function (resolve, reject) {
-      if (typeof tagData.uid !== "undefined" && typeof tagData.pad !== "undefined"  && typeof tagData.padPosition !== "undefined") {
+      if (typeof tagData.uid !== "undefined" && typeof tagData.pad !== "undefined") {
         resolve (tagData)
       } else {
         reject (tagData)

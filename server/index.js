@@ -49,7 +49,6 @@ function beginBruteForceAttack () {
       createCharTagFromId (tagId)
         .then (function (tagData) {
         tagData.pad = 2;
-        tagData.padPosition = 0;
         tag.placeTag (tagData).then (function (placedTag) {
           lastPlaced = placedTag;
           resolve (placedTag);
