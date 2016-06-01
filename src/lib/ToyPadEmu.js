@@ -11,7 +11,7 @@ import TEA from './TEA.js';
 
 export default class ToyPadEmu extends EventEmitter {
 	constructor(opts){
-		opts = opts || { transport : false }
+		opts = opts || { transport : new rawTransport('/dev/hidg0') }
 		super(opts)
 		if(!opts.transport && opts.transport !== false)
 			opts.transport = new rawTransport('/dev/hidg0')
