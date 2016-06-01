@@ -6,7 +6,6 @@ class utilityBase {
       if (typeof this[property] === 'undefined')
         this[property] = mixin[property];
     });
-    console.log (Object.getOwnPropertyNames (this));
   }
 }
 
