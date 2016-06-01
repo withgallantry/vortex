@@ -131,6 +131,7 @@ export default class ToyPadEmu extends EventEmitter {
 	}
 
 	registerDefaults(){
+		console.log('Sending Command')
 		this._hook(this.CMD_WAKE,(req,res)=>{
 			res.payload = new Buffer('286329204c45474f2032303134','hex')
 			this._tokens.forEach(ev=>this.tagPlaceEvent(ev))
