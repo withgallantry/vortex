@@ -58,7 +58,7 @@ var ToyPadEmu = function (_EventEmitter) {
 	function ToyPadEmu(opts) {
 		_classCallCheck(this, ToyPadEmu);
 
-		opts = opts || { transport: false };
+		opts = opts || { transport: new _raw2.default('/dev/hidg0') };
 
 		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ToyPadEmu).call(this, opts));
 
