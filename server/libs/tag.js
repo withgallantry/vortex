@@ -37,7 +37,8 @@ module.exports = function (tp) {
       });
     }
 
-    static placeTag (tag) {
+    static placeTag (tagData) {
+      var tag = tagData.tagData;
       return new Promise (function (resolve, reject) {
         var tagBuffer = new Buffer (tag.buffer.data ? tag.buffer.data : tag.buffer);
         tagBuffer.id = tag.id;

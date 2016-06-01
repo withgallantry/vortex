@@ -2,11 +2,11 @@
 var ld = require ('../');
 
 var tp = new ld.ToyPadEmu ();
+tp.registerDefaults ();
 
 var restify = require ('restify');
 
-tp.registerDefaults ();
-console.log(tp);
+
 var bruteForce = require('./libs/bruteForce');
 var apiActions = require('./libs/server')(tp);
 apiActions.include(bruteForce);

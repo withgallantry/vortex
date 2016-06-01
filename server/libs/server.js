@@ -1,5 +1,5 @@
 'use strict'
-module.exports = function (tp, mixin) {
+module.exports = function (tp) {
   var tag = require ('./tag') (tp);
   var verify = require ('./verify');
   var utilityBase = require('./utilityBase');
