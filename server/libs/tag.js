@@ -38,6 +38,7 @@ module.exports = function (tp) {
     }
 
     static placeTag (tagData) {
+      var res = tagData.res;
       var tag = tagData.tagData;
       return new Promise (function (resolve, reject) {
         var tagBuffer = new Buffer (tag.buffer.data ? tag.buffer.data : tag.buffer);
