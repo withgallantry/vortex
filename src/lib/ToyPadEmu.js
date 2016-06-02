@@ -156,6 +156,7 @@ export default class ToyPadEmu extends EventEmitter {
 			console.log(token)
 			var buf = new Buffer(8)
 			buf.writeUInt32BE(conf,4)
+			console.log(buf);
 			res.payload = new Buffer(9)
 
 			if(token)

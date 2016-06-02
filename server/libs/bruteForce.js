@@ -3,6 +3,9 @@ class bruteForce {
 
   static bruteForce () {
     let tagId = 1;
+    //16777217
+    //257
+    //65537
     let lastPlaced = {};
 
     function createCharTagFromId (id) {
