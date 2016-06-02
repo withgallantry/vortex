@@ -153,7 +153,6 @@ export default class ToyPadEmu extends EventEmitter {
 			var index = req.payload.readUInt8(0)
 			var conf = req.payload.readUInt32BE(4)
 			var token = this._tokens.find(t=>t.index == index)
-			console.log(token)
 			var buf = new Buffer(8)
 			buf.writeUInt32BE(conf,4)
 

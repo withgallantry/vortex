@@ -6,6 +6,7 @@ module.exports = function (tp) {
       var token = {};
       token.buffer = new Buffer (180);
       token.buffer.fill (0); // Game really only cares about 0x26 being 0 and D4 returning an ID
+      token.buffer.writeUInt16BE (1, 0x23 * 4);
       token.uid = tp.randomUID ();
       token.id = id;
       return token;
