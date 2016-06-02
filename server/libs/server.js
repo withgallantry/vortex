@@ -7,7 +7,7 @@ module.exports = function (tp) {
   class server extends utilityBase {
 
     static _sendGoodResponse (args) {
-      let data = args.constructedTagData;
+      let data = args.constructedTagData || args.placedTagData;
       let res = args.res;
       res.send (200, data);
     }

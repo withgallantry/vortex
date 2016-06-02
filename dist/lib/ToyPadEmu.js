@@ -209,7 +209,6 @@ var ToyPadEmu = function (_EventEmitter) {
 		value: function registerDefaults() {
 			var _this3 = this;
 
-			console.log('Sending Command');
 			this._hook(this.CMD_WAKE, function (req, res) {
 				res.payload = new Buffer('286329204c45474f2032303134', 'hex');
 				_this3._tokens.forEach(function (ev) {
@@ -240,6 +239,7 @@ var ToyPadEmu = function (_EventEmitter) {
 				console.log(token);
 				var buf = new Buffer(8);
 				buf.writeUInt32BE(conf, 4);
+				console.log(buf);
 				res.payload = new Buffer(9);
 
 				if (token) {

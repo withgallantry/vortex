@@ -43,7 +43,7 @@ module.exports = function (tp) {
         var tagBuffer = new Buffer (tag.buffer.data ? tag.buffer.data : tag.buffer);
         tagBuffer.id = tag.id;
         var tagData = tp.place (tagBuffer, tag.pad, undefined, tag.uid);
-        resolve (tagData);
+        resolve ({ res: res, placedTagData: tagData });
       });
     }
 
